@@ -1,0 +1,63 @@
+<mat-toolbar color="primary" class="flex-vert-center navbar-transparent navbar-expand-lg fixed-top">
+    <button [matMenuTriggerFor]="lvl1menuIcon" mat-icon-button class="navbar-brand" aria-label="menu-icon-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #lvl1menuIcon="matMenu">
+      <button mat-menu-item (click)="onMenuHomeClick()">Home</button>
+      <button mat-menu-item (click)="goToDashboard()">Dashboard</button>
+    </mat-menu>
+    <button mat-icon-button aria-label="storefront-button">
+      <mat-icon>storefront</mat-icon>
+    </button>
+    <span>Cafe Inventory Management App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button aria-label="person-icon">
+      <mat-icon>person</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true"
+         style="background-image: url('../../assets/img/cafe-inv-project-angular-image.jpg');">
+        <div class="filter"></div>
+    </div>
+
+    <div class="section profile-content">
+        <div class="container">
+
+            <div class="owner">
+                <div class="avatar">
+                    <img src="../../assets/img/Roger-wht_backgrnd-collar-suit2.JPG"
+                         alt="Profile Avatar"
+                         class="img-circle img-no-padding img-responsive">
+                </div>
+                <div class="name">
+                    <h4 class="title">Welcome Back!<br /></h4>
+                    <h6 class="description">{{ username }}</h6>
+                    <span class="role-badge" [ngClass]="role === 'admin' ? 'badge-admin' : 'badge-user'">
+                        {{ role | uppercase }}
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 ml-auto mr-auto text-center">
+                    <p>
+                        Create, approve, and track all your stock orders with our
+                        Cafe Inventory Service. Free your team from repetitive and
+                        error-prone manual processes. After you create a Stock Order
+                        (S.O.), you can send it to your vendor individually or in bulk.
+                        We are adding an AI Agent for further automation in manual tasks
+                        — new release coming soon.
+                    </p>
+                    <br />
+                    <button class="btn btn-round dashboard-btn" (click)="goToDashboard()">
+                        <i class="material-icons" style="vertical-align:middle; margin-right:6px;">dashboard</i>
+                        Go to Dashboard
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

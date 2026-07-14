@@ -1,0 +1,68 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .navbar {
+    position: sticky;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    -webkit-font-smoothing: antialiased;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    transition: 0.4s;
+    padding: 0px;
+    z-index: 100;
+    unicode-bidi: isolate;
+  }
+
+.navbar-text{
+  padding-top: .5250rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.orangeButton {
+  background-color: #ff8f5e;
+  
+}
+
+.mat-form-field-label{
+  color: white;
+}
+
+.sign-in-brand{
+  margin-top: .6250rem;
+  margin-right: 2rem;
+  font-size: 1rem;
+}
+
+.flex-vert-center {
+  display: flex;
+  align-items: center;
+
+}
+
+.navbar-brand {
+  margin-left: 2rem;
+}
+
+  .navbar.navbar-transparent {
+    padding-top: 25px;
+}
+
+  .navbar-transparent{
+    box-shadow: none;
+    border-bottom: 1px solid transparent;
+    background: 0px 0px !important;
+  }
+
+  .fixed-top {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 1030;
+}

@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>{{ dialogAction }} Product</h1>
+<div mat-dialog-content>
+  <form [formGroup]="productForm">
+    <div class="input-group form-group-no-border" style="margin-bottom: 12px;">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><mat-icon>fastfood</mat-icon></span>
+      </div>
+      <input class="form-control" matInput placeholder="Product Name" formControlName="name" required />
+    </div>
+
+    <div class="input-group form-group-no-border" style="margin-bottom: 12px;">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><mat-icon>category</mat-icon></span>
+      </div>
+      <mat-select class="form-control" placeholder="Category" formControlName="inventory_category_id">
+        <mat-option *ngFor="let category of categorys" [value]="category.id">
+          {{ category.name }}
+        </mat-option>
+      </mat-select>
+    </div>
+
+    <div class="input-group form-group-no-border" style="margin-bottom: 12px;">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><mat-icon>attach_money</mat-icon></span>
+      </div>
+      <input class="form-control" matInput type="number" placeholder="Price" formControlName="price" required />
+    </div>
+
+    <div class="input-group form-group-no-border">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><mat-icon>description</mat-icon></span>
+      </div>
+      <input class="form-control" matInput placeholder="Description" formControlName="description" required />
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button class="btn btn-danger btn-round" mat-dialog-close>Cancel</button>
+  <button
+    class="btn btn-round"
+    style="background-color: #00704A; color: #fff;"
+    [disabled]="!productForm.valid"
+    (click)="handleSubmit()"
+  >
+    {{ onAddProduct }}
+  </button>
+</div>

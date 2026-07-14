@@ -1,0 +1,63 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <div class="row" style="align-items: center;">
+              <div class="col-md-12">
+                <h4 class="card-title">Manage Users</h4>
+                <p class="card-category">Registered accounts</p>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+              <div class="col-md-12">
+                <div class="input-group form-group-no-border" style="background:#fff; border-radius:4px; margin-bottom:0;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="background:#fff; border:none;">
+                      <i class="material-icons">search</i>
+                    </span>
+                  </div>
+                  <input class="form-control" style="border:none;" placeholder="Search users..." (keyup)="applyFilter($event)" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body table-responsive">
+            <table mat-table [dataSource]="dataSource" matSort class="table table-hover" style="width:100%;">
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-primary">Name</th>
+                <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+              </ng-container>
+              <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-primary">Email</th>
+                <td mat-cell *matCellDef="let element">{{ element.username }}</td>
+              </ng-container>
+              <ng-container matColumnDef="contactNumber">
+                <th mat-header-cell *matHeaderCellDef class="text-primary">Contact Number</th>
+                <td mat-cell *matCellDef="let element">{{ element.mobileNumber }}</td>
+              </ng-container>
+              <ng-container matColumnDef="role">
+                <th mat-header-cell *matHeaderCellDef class="text-primary">Role</th>
+                <td mat-cell *matCellDef="let element">{{ element.role }}</td>
+              </ng-container>
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef class="text-primary">Status</th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-slide-toggle
+                    [checked]="element.status === 'enabled'"
+                    (change)="onChange($event.checked, element.id)"
+                    color="primary"
+                  ></mat-slide-toggle>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

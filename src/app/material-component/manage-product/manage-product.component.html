@@ -1,0 +1,69 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <div class="row" style="align-items: center;">
+              <div class="col-md-8">
+                <h4 class="card-title">Manage Product</h4>
+                <p class="card-category">Manage all cafe products</p>
+              </div>
+              <div class="col-md-4 text-right">
+                <button class="btn btn-round" style="background-color:#CBA258; color:#fff;" (click)="handleAddAction()">
+                  <i class="material-icons">add_circle</i> Add Product
+                </button>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+              <div class="col-md-12">
+                <div class="input-group form-group-no-border" style="background:#fff; border-radius:4px; margin-bottom:0;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="background:#fff; border:none;">
+                      <i class="material-icons">search</i>
+                    </span>
+                  </div>
+                  <input class="form-control" style="border:none;" placeholder="Search products..." (keyup)="applyFilter($event)" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body table-responsive">
+            <table mat-table [dataSource]="dataSource" matSort class="table table-hover" style="width:100%;">
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-primary">Name</th>
+                <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+              </ng-container>
+              <ng-container matColumnDef="categoryName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-primary">Category</th>
+                <td mat-cell *matCellDef="let element">{{ element.inventory_category_name }}</td>
+              </ng-container>
+              <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef class="text-primary">Description</th>
+                <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+              </ng-container>
+              <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-primary">Price</th>
+                <td mat-cell *matCellDef="let element">{{ element.price | currency:'USD' }}</td>
+              </ng-container>
+              <ng-container matColumnDef="edit">
+                <th mat-header-cell *matHeaderCellDef class="text-primary">Action</th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-icon-button style="color:#1E3932;" (click)="handleEditAction(element)" matTooltip="Edit">
+                    <i class="material-icons">edit</i>
+                  </button>
+                  <button mat-icon-button style="color:#CBA258;" (click)="handleDeleteAction(element)" matTooltip="Delete">
+                    <i class="material-icons">close</i>
+                  </button>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

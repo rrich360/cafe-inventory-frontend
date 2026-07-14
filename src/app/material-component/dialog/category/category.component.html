@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>{{ dialogAction }} Category</h1>
+<div mat-dialog-content>
+  <form [formGroup]="categoryForm">
+    <div class="input-group form-group-no-border">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <mat-icon>category</mat-icon>
+        </span>
+      </div>
+      <input
+        class="form-control"
+        matInput
+        placeholder="Category Name"
+        formControlName="name"
+        required
+      />
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button class="btn btn-danger btn-round" mat-dialog-close>Cancel</button>
+  <button
+    class="btn btn-round"
+    style="background-color: #00704A; color: #fff;"
+    [disabled]="!categoryForm.valid"
+    (click)="handleSubmit()"
+  >
+    {{ onAddCategory }}
+  </button>
+</div>

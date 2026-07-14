@@ -1,0 +1,21 @@
+.card-header-primary {
+  background: linear-gradient(60deg, #00704A, #1E3932) !important;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(0,112,74,.4);
+}
+
+.card-title {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+}
+
+mat-label {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1E3932;
+  display: block;
+  margin-bottom: 4px;
+}

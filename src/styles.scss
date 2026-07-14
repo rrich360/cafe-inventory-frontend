@@ -1,0 +1,307 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+/* Starbucks Brand Colors */
+:root {
+  --starbucks-green:     #00704A;
+  --starbucks-dark:      #1E3932;
+  --starbucks-light:     #D4E9E2;
+  --starbucks-gold:      #CBA258;
+}
+
+/* Override Creative Tim purple card headers globally */
+.card-header-primary {
+  background: linear-gradient(60deg, #00704A, #1E3932) !important;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(0,112,74,.4) !important;
+}
+
+/* Override primary toolbar */
+.mat-toolbar.mat-primary {
+  background-color: #1E3932 !important;
+  color: #ffffff !important;
+}
+
+/* Override sidebar dark class */
+.dark-sidebar {
+  background-color: #1E3932 !important;
+}
+
+/* Starbucks primary button override */
+.btn-primary {
+  background-color: #00704A !important;
+  border-color: #00704A !important;
+  color: #ffffff !important;
+}
+
+/* Override purple theme color across Angular Material */
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #00704A !important;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked,
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+  background: #00704A !important;
+}
+
+body {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Montserrat, 'Roboto', 'Helvetica Neue', sans-serif; }
+
+/* ============================================================
+   Creative Tim Material Dashboard v2.8.0 — Card System
+   ============================================================ */
+
+.card {
+  border: 0;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border-radius: 6px;
+  color: #3C4858;
+  background: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+  width: 100%;
+
+  .card-title {
+    margin-top: 0.625rem;
+    font-family: Montserrat, 'Roboto', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    &:last-child { margin-bottom: 0; }
+  }
+
+  .card-category {
+    margin-top: 10px;
+    color: #999999;
+    font-size: 14px;
+  }
+
+  /* Colored header: floating effect */
+  [class*="card-header-"] {
+    margin: 0px 15px 0;
+    padding: 0;
+
+    &:not(.card-header-icon):not(.card-header-text):not(.card-header-image) {
+      border-radius: 3px;
+      margin-top: -20px;
+      padding: 15px;
+    }
+
+    .card-icon,
+    .card-text {
+      border-radius: 3px;
+      padding: 15px;
+      margin-top: -20px;
+      margin-right: 15px;
+      float: left;
+    }
+
+    .card-title,
+    h4 { color: #fff; }
+    .card-category { color: rgba(255,255,255,.7); }
+  }
+
+  .card-header {
+    border-bottom: none;
+    background: transparent;
+    z-index: 3 !important;
+
+    &.card-header-icon,
+    &.card-header-text {
+      text-align: right;
+
+      i {
+        width: 33px;
+        height: 33px;
+        text-align: center;
+        line-height: 33px;
+      }
+
+      .card-title {
+        margin-top: 15px;
+        color: #3C4858;
+      }
+
+      &.card-header-icon i {
+        font-size: 36px;
+        line-height: 56px;
+        width: 56px;
+        height: 56px;
+        text-align: center;
+      }
+    }
+  }
+
+  .card-body {
+    padding: 0.9375rem 20px;
+    position: relative;
+  }
+
+  .card-body + .card-footer,
+  .card-footer {
+    padding: 0;
+    padding-top: 10px;
+    margin: 0 15px 10px;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: 0;
+
+    .stats {
+      color: #999999;
+      font-size: 12px;
+      line-height: 22px;
+
+      i.material-icons {
+        font-size: 16px;
+        position: relative;
+        top: 4px;
+        margin-right: 3px;
+      }
+    }
+  }
+}
+
+/* stat cards */
+.card.card-stats {
+  .card-header.card-header-icon {
+    text-align: right;
+
+    .card-icon + .card-title,
+    .card-icon + .card-category { padding-top: 10px; }
+
+    .card-title,
+    .card-category { margin: 0; }
+
+    & + .card-footer {
+      border-top: 1px solid #eee;
+      margin-top: 14px;
+    }
+  }
+  .card-body { text-align: right; }
+}
+
+/* page content wrapper matching Creative Tim .main-content */
+.main-content {
+  padding: 30px 15px;
+  min-height: calc(100vh - 123px);
+}
+
+/* ============================================================
+   Starbucks overrides — replaces ALL Creative Tim purple/default
+   ============================================================ */
+
+/* Card header primary — Starbucks green gradient */
+.card .card-header-primary .card-icon,
+.card .card-header-primary .card-text,
+.card .card-header-primary:not(.card-header-icon):not(.card-header-text):not(.card-header-image) {
+  background: linear-gradient(60deg, #00704A, #1E3932) !important;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(0,112,74,.4) !important;
+}
+
+/* Angular Material toolbar — Starbucks Dark Green */
+.mat-toolbar.mat-primary {
+  background-color: #1E3932 !important;
+  color: #ffffff !important;
+}
+
+/* Sidebar */
+.dark-sidebar {
+  background-color: #F2F0EB !important;
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: #00704A !important;
+  border-color: #00704A !important;
+  color: #ffffff !important;
+}
+
+/* Angular Material select active option */
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #00704A !important;
+}
+.mat-primary .mat-pseudo-checkbox-checked,
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+  background: #00704A !important;
+}
+
+  //responsibe table
+  @media(max-width: 800px) {
+    .responsive_table {
+        overflow-x: auto !important;
+    }
+  
+    .mat-table {
+        min-width:800px;
+    }
+  }
+  
+  .mat-row {
+    height: auto;
+  }
+  
+  .mat-header-cell,.mat-cell {
+    text-align: center !important;
+    padding: 0px 8px 0px 15px !important;
+  }
+
+  .black-snackbar {
+    background: black !important;
+    color: white !important;
+  }
+
+  .green-snackbar {
+    background: #00ff7f !important;
+    color: black !important;
+  }
+
+  .mat-snack-bar-container {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 40vw !important;
+    min-width: 90% !important;
+    max-width: 100vw !important;
+    margin-top: 70px !important;
+    padding: 20px !important;
+}
+
+.spacer {
+  flex: 1 auto;
+}
+
+/* ============================================================
+   Dashboard stat card overrides — Starbucks palette
+   ============================================================ */
+
+/* Override the green gradient specifically for stat card floating headers */
+.card.card-stats .card-header.card-header-icon {
+  background: #D8E8E2 !important;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,.08), 0 7px 10px -5px rgba(75,53,46,.2) !important;
+}
+
+/* Floating icon square — Light Green to match header */
+.card.card-stats .card-header-primary .card-icon {
+  background: #D8E8E2 !important;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,.08), 0 7px 10px -5px rgba(75,53,46,.15) !important;
+}
+
+/* Icon inside the floating header — Starbucks Brown */
+.card.card-stats .card-header.card-header-icon .card-icon i {
+  color: #4b352e !important;
+}
+
+/* Number count (e.g. "12") — Starbucks Brown */
+.card.card-stats .card-header.card-header-icon .card-title {
+  color: #4b352e !important;
+}
+
+/* Label (e.g. "Total Categories") — slightly softer brown */
+.card.card-stats .card-header.card-header-icon .card-category {
+  color: #4b352e !important;
+  opacity: 0.75;
+}

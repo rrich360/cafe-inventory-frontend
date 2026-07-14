@@ -1,0 +1,13 @@
+<button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5" style="color:#ffffff;">
+  <mat-icon>account_circle</mat-icon>
+</button>
+<mat-menu #profile="matMenu" class="mymegamenu">
+  <button mat-menu-item (click)="openChangePassword()">
+    <mat-icon style="color:#1E3932;">lock</mat-icon>
+    <span>Change Password</span>
+  </button>
+  <button mat-menu-item (click)="signOut()">
+    <mat-icon style="color:#CBA258;">logout</mat-icon>
+    <span>Sign Out</span>
+  </button>
+</mat-menu>

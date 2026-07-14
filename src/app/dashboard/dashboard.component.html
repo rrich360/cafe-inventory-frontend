@@ -1,0 +1,79 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Total Categories -->
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-primary card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">category</i>
+            </div>
+            <p class="card-category">Total Categories</p>
+            <h3 class="card-title">{{ totalCategories }}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <button
+                class="btn btn-sm btn-round"
+                style="background-color:#00704A; color:#fff; margin:0;"
+                (click)="navigateTo('/cafe/category')"
+              >
+                View Category
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Total Products -->
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-primary card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">fastfood</i>
+            </div>
+            <p class="card-category">Total Products</p>
+            <h3 class="card-title">{{ totalProducts }}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <button
+                class="btn btn-sm btn-round"
+                style="background-color:#00704A; color:#fff; margin:0;"
+                (click)="navigateTo('/cafe/product')"
+              >
+                View Product
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Total Stock Orders -->
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-primary card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">receipt_long</i>
+            </div>
+            <p class="card-category">Total Stock Orders</p>
+            <h3 class="card-title">{{ totalStockOrders }}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <button
+                class="btn btn-sm btn-round"
+                style="background-color:#00704A; color:#fff; margin:0;"
+                (click)="navigateTo('/cafe/viewstockorders')"
+              >
+                View Orders
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

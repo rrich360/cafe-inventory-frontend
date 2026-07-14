@@ -1,0 +1,30 @@
+
+   
+    <mat-toolbar color="primary" class="flex-vert-center navbar-transparent navbar-expand-lg fixed-top">
+      <button [matMenuTriggerFor]= "lvl1menuIcon" mat-icon-button class="navbar-brand" aria-label="menu-icon-button">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #lvl1menuIcon="matMenu">
+        <button mat-menu-item (click)="onMenuHomeClick()">Home</button>
+        <button mat-menu-item (click)="onMenuGetStartedClick()">Get Started</button>
+        <button mat-menu-item (click)="onMenuForgotPasswordClick()">Forgot Password?</button>
+      </mat-menu>
+
+      <button mat-icon-button  aria-label="storefront-button" href="">
+        <mat-icon>storefront</mat-icon>
+      </button>
+
+      <span>Cafe Inventory Management App</span>
+
+      <span class="example-spacer"></span>
+
+      <button mat-raised-button  class="orangeButton sign-in-brand" (click)="onSignInClick()">
+        <span class="mat-form-field-label">Sign In</span>
+      </button>
+
+      <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with person icon">
+        <mat-icon>person</mat-icon>
+      </button> -->
+    </mat-toolbar>
+
+    

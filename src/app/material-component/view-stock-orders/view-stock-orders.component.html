@@ -1,0 +1,77 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <div class="row" style="align-items: center;">
+              <div class="col-md-12">
+                <h4 class="card-title">View Stock Orders</h4>
+                <p class="card-category">All S.O. records</p>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+              <div class="col-md-12">
+                <div class="input-group form-group-no-border" style="background:#fff; border-radius:4px; margin-bottom:0;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="background:#fff; border:none;">
+                      <i class="material-icons">search</i>
+                    </span>
+                  </div>
+                  <input class="form-control" style="border:none;" placeholder="Search stock orders..." (keyup)="applyFilter($event)" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body table-responsive">
+            <table mat-table [dataSource]="dataSource" matSort class="table table-hover" style="width:100%;">
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-primary">Name</th>
+                <td mat-cell *matCellDef="let element">{{ element.companyName }}</td>
+              </ng-container>
+              <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-primary">Email</th>
+                <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+              </ng-container>
+              <ng-container matColumnDef="contactNumber">
+                <th mat-header-cell *matHeaderCellDef class="text-primary">Contact Number</th>
+                <td mat-cell *matCellDef="let element">{{ element.contactNumber }}</td>
+              </ng-container>
+              <ng-container matColumnDef="paymentMethod">
+                <th mat-header-cell *matHeaderCellDef class="text-primary">Payment Method</th>
+                <td mat-cell *matCellDef="let element">{{ element.paymentMethod }}</td>
+              </ng-container>
+              <ng-container matColumnDef="total">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-primary">Total</th>
+                <td mat-cell *matCellDef="let element">{{ element.totalValue | currency:'USD' }}</td>
+              </ng-container>
+              <ng-container matColumnDef="view">
+                <th mat-header-cell *matHeaderCellDef class="text-primary">Action</th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-icon-button style="color:#1E3932;" (click)="handleViewAction(element)" matTooltip="View S.O.">
+                    <i class="material-icons">visibility</i>
+                  </button>
+                  <button mat-icon-button style="color:#00704A;" (click)="handleDownloadPdfAction(element)" matTooltip="Download PDF">
+                    <i class="material-icons">picture_as_pdf</i>
+                  </button>
+                  <button
+                    *ngIf="role === 'admin'"
+                    mat-icon-button
+                    style="color:#CBA258;"
+                    (click)="handleDeleteAction(element)"
+                    matTooltip="Delete S.O."
+                  >
+                    <i class="material-icons">close</i>
+                  </button>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+ <app-navbar></app-navbar>
+
+ 
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('../../assets/img/bck-grnd-city-view-bridge-boats-docks-carnival-screen_saver.png');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                      <div class="card card-register">
+                          <h3 class="title">Register</h3>
+                         
+                          <form class="register-form" [formGroup]= "registerForm">
+
+                            <label>Name</label>
+                            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <mat-icon matSuffix>person</mat-icon>
+                                </span>
+                              </div>
+                                <input class="form-control" placeholder="Name" (focus)= "focus=true" (blur)= "focus=false" 
+                                formControlName="name" required>
+                            </div>
+                            <mat-error *ngIf= "registerForm.controls.name.touched && registerForm.controls.name.invalid">
+                                <span *ngIf= "registerForm.controls.name.errors.required">This field is mandatory.</span>
+                                <span *ngIf= "registerForm.controls.name.errors.pattern">This field is invalid.</span>
+                            </mat-error>
+                            <br>    
+
+                            <label>Contact Number</label>
+                            <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <mat-icon matSuffix>phone</mat-icon>
+                                </span>
+                              </div>
+                                <input type="text" class="form-control" placeholder="Contact Number" (focus)= "focus1=true" (blur)= "focus1=false"
+                                formControlName="mobileNumber" required>
+                            </div>
+                            <mat-error *ngIf= "registerForm.controls.mobileNumber.touched && registerForm.controls.mobileNumber.invalid">
+                                <span *ngIf= "registerForm.controls.mobileNumber.errors.required">This field is mandatory.</span>
+                                <span *ngIf= "registerForm.controls.mobileNumber.errors.pattern">This field is invalid.</span>
+                            </mat-error>
+                            <br>    
+
+                              <label>Username</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <mat-icon matSuffix>email</mat-icon>
+                                  </span>
+                                </div>
+                                  <input type="text" class="form-control" placeholder="Username" (focus)= "focus=true" (blur)= "focus=false" 
+                                  formControlName="username" required>
+                              </div>
+                              <mat-error *ngIf= "registerForm.controls.username.touched && registerForm.controls.username.invalid">
+                                <span *ngIf= "registerForm.controls.username.errors.required">This field is mandatory.</span>
+                                <span *ngIf= "registerForm.controls.username.errors.pattern">This field is invalid.</span>
+                            </mat-error>
+                            <br>    
+
+                              <label>Password</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <mat-icon matSuffix>key</mat-icon>
+                                  </span>
+                                </div>
+                                  <input type="password" class="form-control" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false"
+                                  formControlName="password" required [type]= "password ? 'password': 'text'">
+                                  <button type="button" mat-icon-button matSuffix (click)= "password = !password" [attr.aria-label]="'Hide password'" [attr.aria-pressed]= "password">
+                                    <mat-icon>{{password ? 'visibility_off' : 'visibility' }}</mat-icon>
+                                  </button>
+                              </div>
+                              <mat-error *ngIf= "registerForm.controls.password.touched && registerForm.controls.password.invalid">
+                                <span *ngIf= "registerForm.controls.password.errors.required">This field is mandatory.</span>
+                            </mat-error>
+                            <br>    
+
+                              <label>Confirm Password</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <mat-icon matSuffix>key</mat-icon>
+                                  </span>
+                                </div>
+                                  <input type="password" class="form-control" placeholder="Confirm Password" (focus)="focus1=true" (blur)="focus1=false"
+                                  formControlName="confirmPassword" required [type]= "confirmPassword ? 'password': 'text'">
+                                  <button type="button" mat-icon-button matSuffix (click)= "password = !password" [attr.aria-label]= "'Hide password'" [attr.aria-pressed]= "password">
+                                    <mat-icon>{{password ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                  </button>
+                              </div>
+                              <mat-error *ngIf= "registerForm.controls.confirmPassword.touched && registerForm.controls.confirmPassword.invalid">
+                                <span *ngIf= "registerForm.controls.confirmPassword.errors.required">This field is mandatory.</span>
+                            </mat-error>
+                            <mat-hint *ngIf= "validateSubmit() && !(registerForm.controls.confirmPassword.invalid)">
+                                <span>New Password & Confirm Password does not match.</span>
+                            </mat-hint>
+                            <br>    
+
+                              <button class="btn btn-danger btn-block btn-round" type="submit" (click)= "handleSubmit()" [disabled]= "validateSubmit() || !(registerForm.valid && registerForm.dirty)">
+                                Submit
+                            </button>
+                          </form>
+
+                      </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>  
+     </div>

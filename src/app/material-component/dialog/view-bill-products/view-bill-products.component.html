@@ -1,0 +1,76 @@
+<h1 mat-dialog-title>Stock Order Details</h1>
+<div mat-dialog-content>
+
+  <!-- Store Details -->
+  <div class="card" style="margin-bottom: 16px;">
+    <div class="card-header card-header-primary">
+      <h4 class="card-title" style="color:#fff; margin:0;">Store Details</h4>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6"><strong>Name:</strong> {{ data?.companyName }}</div>
+        <div class="col-md-6"><strong>Email:</strong> {{ data?.email }}</div>
+      </div>
+      <div class="row" style="margin-top:8px;">
+        <div class="col-md-6"><strong>Contact:</strong> {{ data?.contactNumber }}</div>
+        <div class="col-md-6"><strong>Payment:</strong> {{ data?.paymentMethod }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor Details -->
+  <div class="card" style="margin-bottom: 16px;" *ngIf="data?.vendorName">
+    <div class="card-header card-header-primary">
+      <h4 class="card-title" style="color:#fff; margin:0;">Vendor Details</h4>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6"><strong>Vendor Name:</strong> {{ data?.vendorName }}</div>
+        <div class="col-md-6"><strong>Vendor Email:</strong> {{ data?.vendorEmail }}</div>
+      </div>
+      <div class="row" style="margin-top:8px;">
+        <div class="col-md-12"><strong>Billing Address:</strong> {{ data?.billingAddress }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product List -->
+  <div class="card">
+    <div class="card-header card-header-primary">
+      <h4 class="card-title" style="color:#fff; margin:0;">Product List</h4>
+    </div>
+    <div class="card-body responsive_table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z0" style="width:100%;">
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let element">{{ element['stock item'] }}</td>
+        </ng-container>
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef>Category</th>
+          <td mat-cell *matCellDef="let element">{{ element.category }}</td>
+        </ng-container>
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef>Price</th>
+          <td mat-cell *matCellDef="let element">{{ element.price | currency:'USD' }}</td>
+        </ng-container>
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef>Quantity</th>
+          <td mat-cell *matCellDef="let element">{{ element.quantity }}</td>
+        </ng-container>
+        <ng-container matColumnDef="total">
+          <th mat-header-cell *matHeaderCellDef>Total</th>
+          <td mat-cell *matCellDef="let element">{{ element.total | currency:'USD' }}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <div class="card-body" style="text-align:right; padding-top:0;">
+      <strong>Total Amount: {{ data?.totalValue | currency:'USD' }}</strong>
+    </div>
+  </div>
+
+</div>
+<div mat-dialog-actions align="end">
+  <button class="btn btn-round" style="background-color:#1E3932; color:#fff;" mat-dialog-close>Close</button>
+</div>

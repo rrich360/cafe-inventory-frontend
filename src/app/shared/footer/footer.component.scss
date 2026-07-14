@@ -1,0 +1,165 @@
+//high-level styling for footer
+
+.footer {
+    background-attachment: fixed;
+    position: relative;
+    line-height: 20px;
+}
+
+.footer {
+    background-color: #fff;
+}
+
+ footer {
+    display: block;
+}
+
+// container 
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// row 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+
+// footer nav
+@media (max-width: 767px) {
+    .footer .credits, .footer .footer-nav {
+        margin: 0 auto;
+    }
+}
+.footer .credits, .footer-nav {
+    line-height: 85px;
+}
+
+nav {
+    display: block;
+}
+
+.footer nav>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+ul {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
+//links within the footer nav
+
+@media (max-width: 767px) {
+    .footer:not(.footer-big) nav>ul li {
+        float: none;
+    }
+}
+.footer nav>ul>li {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 15px 3px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.footer nav>ul a:not(.btn) {
+    line-height: 1.6;
+    opacity: .8;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #777;
+    display: block;
+    margin-bottom: 3px;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+
+//credits section in the footer
+
+@media (max-width: 767px) {
+    .footer .credits, .footer .footer-nav {
+        margin: 0 auto;
+    }
+}
+
+.footer .credits, .footer-nav {
+    line-height: 85px;
+}
+
+.ml-auto, .mx-auto {
+    margin-left: auto !important;
+}
+
+// copyright section
+.footer .copyright {
+    color: #777;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin: 15px 3px;
+    line-height: 20px;
+    text-align: center;
+}
+
+//anitmation for the heart icon
+heathing animation {
+    transform: scale(0.75);
+}
+
+.footer .heart {
+    color: #eb5e28;
+}
+
+.fa {
+    width: 18px;
+    text-align: center;
+}
+
+.heart {
+    animation: 1s infinite heathing;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px / 1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.fa-heart:before {
+    content: "\f004";
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
