@@ -1,27 +1,30 @@
-# Frontend
+# Cafe Inventory Management System — Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
+Angular dashboard for a full-stack cafe inventory management system: inventory/category/product management, stock order tracking with PDF download, user management, and role-based navigation driven by a JWT issued from the backend API.
 
-## Development server
+This is the local-only baseline version of the project. The AWS-deployed variant lives in `cafe-inventory-frontend-aws` (link added once that repo is live).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Tech stack
 
-## Code scaffolding
+- Angular 14.2 + Angular Material
+- RxJS
+- JWT auth via an HTTP interceptor
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting started
 
-## Build
+1. Install dependencies:
+   ```
+   npm install
+   ```
+2. Make sure the backend (see [cafe-inventory-backend](https://github.com/rrich360/cafe-inventory-backend)) is running on `http://localhost:8081` — this is set in `src/environments/environment.ts` (`apiUrl`), update it if your backend runs elsewhere.
+3. Run the dev server:
+   ```
+   ng serve
+   ```
+4. Navigate to `http://localhost:4200`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Related
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Backend: [cafe-inventory-backend](https://github.com/rrich360/cafe-inventory-backend) (Spring Boot)
+- AWS-deployed variant: `cafe-inventory-frontend-aws` (coming soon)
+- Part of the "From Code to Cloud" article series documenting this project's journey from localhost to AWS
