@@ -16,6 +16,10 @@ export class UserService {
     return this.http.post(this.url + '/user/api/register', data);
   }
 
+  forgotPassword(data: any): Observable<any> {
+    return this.http.post(this.url + '/user/api/forgot_password', data);
+  }
+
   userSignIn(obj: any): Observable<any> {
     return this.http.post(this.url + '/user/api/sign_in', obj, {
       responseType: 'text'
